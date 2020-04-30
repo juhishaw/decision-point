@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrimeNgModule } from './prime-ng/prime-ng.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { PrimeNgModule } from './prime-ng/prime-ng.module';
     BrowserModule,
     BrowserAnimationsModule,
     PrimeNgModule,
+    HomeModule,
     AppRoutingModule
   ],
   providers: [],

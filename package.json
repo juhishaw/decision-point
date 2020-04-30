@@ -1,6 +1,7 @@
 {
   "name": "decision-point",
   "version": "0.0.0",
+  "author": "Juhi shaw",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
