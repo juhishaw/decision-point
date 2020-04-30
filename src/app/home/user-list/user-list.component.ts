@@ -13,6 +13,7 @@ export class UserListComponent implements OnInit {
   userPosts: any[] = [];
   results: any[];
   searchText: string;
+  isDataLoading = true;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -25,27 +26,33 @@ export class UserListComponent implements OnInit {
       .get<UserList[]>('https://jsonplaceholder.typicode.com/users')
       .subscribe((response) => {
         this.userList = response;
-        // this.userList.forEach((value) => {
-        //   this.getUserPosts(value.id);
-        // });
         this.results = response;
+        this.isDataLoading = false;
       });
   }
-
-  // getUserPosts(userId: number) {
-  //   this.http
-  //     .get<UserPosts[]>(
-  //       `https://jsonplaceholder.typicode.com/posts?userId=${userId}`
-  //     )
-  //     .subscribe((response) => {
-  //       this.userPosts.push(response);
-  //     });
-  // }
 
   search(event) {
     this.results = this.userList.filter((value) =>
       value.name.includes(event.query)
     );
+  }
+
+  randomColorCodes(): string[] {
+    const colors = [
+      '#FB9D9D',
+      '#C8D1DB',
+      '#FCA481',
+      '#C38BEC',
+      '#F29AD4',
+      '#F8D697',
+      '#8EC3F7',
+      '#988BEC',
+    ];
+    return colors;
+  }
+
+  getRandomColor(index: number) {
+    return this.randomColorCodes()[index % 6];
   }
 
   redirectToPosts(userId: number) {

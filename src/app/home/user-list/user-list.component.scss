@@ -42,17 +42,23 @@
       flex-direction: column;
       justify-content: center;
       text-align: justify;
-      cursor: pointer;
+      overflow: hidden;
+      opacity: 0.6;
+      transition: 0.3s;
+      &:hover {
+        cursor: pointer;
+        opacity: 1;
+      }
       &:not(:nth-child(even)) {
         margin-right: 25px;
       }
       .name {
-        color: #333333;
+        color: #fff;
         font-weight: 600;
         font-size: 18px;
       }
       .id {
-        color: #7f7f7f;
+        color: #fff;
         font-weight: 400;
         font-size: 14px;
       }

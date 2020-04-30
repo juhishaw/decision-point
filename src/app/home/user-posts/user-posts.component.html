@@ -1,10 +1,14 @@
 <div class="back-btn" (click)="backClicked()"></div>
-
-<div class="post-wrapper">
-    <ul class="posts-list">
-        <li *ngFor="let post of userPosts">
-            <div class="title">{{post.title}}</div>
-            <div class="post">{{post.body}}</div>
-        </li>
-    </ul>
+<div *ngIf="isDataLoading; else post_container" class="loader">
+    <img src="../../../assets/images/loader.gif" alt="">
 </div>
+<ng-template #post_container>
+  <div class="post-wrapper">
+    <ul class="posts-list">
+      <li *ngFor="let post of userPosts">
+        <div class="title">{{ post.title }}</div>
+        <div class="post">{{ post.body }}</div>
+      </li>
+    </ul>
+  </div>
+</ng-template>

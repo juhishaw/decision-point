@@ -9,6 +9,7 @@ import { DataChartComponent } from './data-chart/data-chart.component';
 import { FormsModule } from '@angular/forms';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 import { FilterPipe } from '../shared/filter.pipe';
+import { ChartModule } from 'angular-highcharts';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FilterPipe } from '../shared/filter.pipe';
     CommonModule,
     HomeRoutingModule,
     FormsModule,
-    PrimeNgModule
+    PrimeNgModule,
+    ChartModule
   ]
 })
 export class HomeModule { }

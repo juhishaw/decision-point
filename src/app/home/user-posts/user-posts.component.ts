@@ -11,6 +11,7 @@ import { Location } from '@angular/common';
 })
 export class UserPostsComponent implements OnInit {
   userPosts: UserPosts[];
+  isDataLoading = true;
 
   constructor(
     private http: HttpClient,
@@ -31,6 +32,7 @@ export class UserPostsComponent implements OnInit {
       )
       .subscribe((response) => {
         this.userPosts = response;
+        this.isDataLoading = false;
       });
   }
 
