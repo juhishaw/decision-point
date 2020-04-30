@@ -1,1 +1,22 @@
-<p>user-list works!</p>
+<div class="input-wrapper">
+ <div class="search-wrapper">
+    <div class="search-user">Search user</div>
+    <p-autoComplete
+      [(ngModel)]="searchText"
+      (ngModelChange)="modelValueChange()"
+      [suggestions]="results"
+      (completeMethod)="search($event)"
+      [field]="'name'"
+    ></p-autoComplete>
+ </div>
+ <div class="chart" (click)="redirectToChart()">Chart</div>
+</div>
+
+<div class="list-wrapper">
+  <ul>
+    <li *ngFor="let user of results" (click)="redirectToPosts(user.id)">
+      <div class="name">Name: {{ user.name }}</div>
+      <div class="id">Id: {{ user.id }}</div>
+    </li>
+  </ul>
+</div>

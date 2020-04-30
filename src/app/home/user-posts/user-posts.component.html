@@ -1,1 +1,10 @@
-<p>user-posts works!</p>
+<div class="back-btn" (click)="backClicked()"></div>
+
+<div class="post-wrapper">
+    <ul class="posts-list">
+        <li *ngFor="let post of userPosts">
+            <div class="title">{{post.title}}</div>
+            <div class="post">{{post.body}}</div>
+        </li>
+    </ul>
+</div>
